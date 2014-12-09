@@ -30,7 +30,7 @@ exports.execScript = function (options) {
         });
 
     } else {
-        connection.query(sqlScript, sqlParam, function (err, response) {
+        connection.query(sqlScript, args, function (err, response) {
             if (err) {
                 throw err;
             }

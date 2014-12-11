@@ -3,6 +3,7 @@
  */
 
 var mysql = require('mysql');
+var mongoose=require('mongoose');
 var MYSQL_USERNAME = 'root';
 var MYSQL_PASSWORD = '123456';
 var MYSQL_DATABASE = 'cjtrade';

@@ -3,16 +3,12 @@
  */
 
 var mysql = require('mysql');
-var mongoose=require('mongoose');
-var MYSQL_USERNAME = 'root';
-var MYSQL_PASSWORD = '123456';
-var MYSQL_DATABASE = 'cjtrade';
-var MYSQL_HOST = 'localhost';
+var config=require('../config');
 var MYSQL_CONFIG = {
-    user: MYSQL_USERNAME,
-    password: MYSQL_PASSWORD,
-    database: MYSQL_DATABASE,
-    host: MYSQL_HOST
+    user:config.root,
+    password:config.password,
+    database:config.db,
+    host:config.host
 };
 
 exports.execScript = function (options) {

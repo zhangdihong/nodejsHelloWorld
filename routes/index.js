@@ -81,7 +81,7 @@ router.get('/mongodb', function (req, res) {
                             if(err){
                                 console.log(err);
                             }
-                            console.log(result);
+                            res.json(result);
                         });
                     }
                 });
@@ -98,7 +98,7 @@ router.get('/mongodb/select', function (req,res) {
                             console.log(err.message);
                         }else{
                             collection.find().toArray(function (err,doc) {
-                                console.log(doc)
+                                res.json(doc)
                             })
                         }
                     });
@@ -116,7 +116,7 @@ router.get('/mongodb/update',function(req,res){
                             console.log(err.message);
                     }else{
                             collection.update({id:11},{$set:{name:'12324545'}},{safe:true}, function (err,result) {
-                                    console.log(result);
+                                res.json(result);
                             });
                     }
             });
@@ -135,7 +135,7 @@ router.get('/mongodb/delete', function (req,res) {
                         if(err){
                             console.log(err);
                         }
-                        console.log(result);
+                        res.json(result);
                     });
                 });
             }else{
@@ -143,4 +143,9 @@ router.get('/mongodb/delete', function (req,res) {
             }
         });
 });
+router.get('/mongodb/test', function () {
+    var connection=mongoose.connect('mongodb://localhost/MongoDB');
+    console.log(connection);
+    console.log('测试中。。。。。。。');
+})
 module.exports = router;
